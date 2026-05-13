@@ -78,6 +78,10 @@ Requires precomputed Gram matrices in `checkpoints/`.
 - **Calibration metrics:** Computes ECE and Brier scores for the Classical RBF and OOF
   Stacking Ensemble using cached Gram matrices (Section 5).
 
+`platt_scaling_github.py` applies post-hoc Platt scaling to the OOF Stacking Ensemble
+and Classical RBF, reporting ECE and Brier scores before and after calibration (Section 5).
+Requires precomputed Gram matrices in `checkpoints/`.
+
 ## Pipeline structure
 
 | Cell | What |
