@@ -66,11 +66,17 @@ checkpoints/      # Gram matrices (NPY) for caching
 
 Gram matrices are cached as `.npy` files. On subsequent runs, they load from cache instead of recomputing.
 
-## Base model selection
+## Additional analyses
 
 `base_model_selection_mcnemar.py` reproduces the McNemar pairwise redundancy tests
 used to select the four base models from the six-model candidate space (Section 4.3).
 Requires precomputed Gram matrices in `checkpoints/`.
+
+`vqc_ablation_and_calibration_github.py` runs two supplementary analyses:
+- **VQC loss function ablation:** Trains the VQC with both MSE and cross-entropy loss,
+  confirming that the barren plateau is the cause of failure, not the loss choice (Section 4.5).
+- **Calibration metrics:** Computes ECE and Brier scores for the Classical RBF and OOF
+  Stacking Ensemble using cached Gram matrices (Section 5).
 
 ## Pipeline structure
 
